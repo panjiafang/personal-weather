@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/setting_layout_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_margin">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/setting_item_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Degree Shown As"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/weather_cur_size"
+                    android:layout_centerVertical="true"
+                    />
+
+                <RadioGroup android:id="@+id/setting_rg_degree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true">
+                    <RadioButton android:id="@+id/setting_rb_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="°C"
+                        android:layout_marginRight="20dp"/>
+
+                    <RadioButton android:id="@+id/setting_rb_f"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="°F"/>
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:background="@drawable/setting_item_bg">
+
+                <TextView android:id="@+id/setting_tv_cwbg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current Weather Backgroung"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="@dimen/weather_cur_size"/>
+
+                <RelativeLayout android:id="@+id/setting_layout_cwbg"
+                    android:layout_width="80dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/setting_tv_cwbg"
+                    android:background="#11111111">
+                    <TextView android:id="@+id/setting_tv_ccwbg_effect"
+                        android:layout_width="60dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:background="#22222222"/>
+
+                    <TextView android:id="@+id/setting_tv_cdwbg_effect"
+                        android:layout_width="60dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#22222222"
+                        android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/setting_tv_cwbg"
+                    android:layout_toLeftOf="@id/setting_layout_cwbg"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Red"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_red"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Green"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_green"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Blue"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_blue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Alpha"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_alpha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:background="@drawable/setting_item_bg">
+
+                <TextView android:id="@+id/setting_tv_dwbg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DayList Weather Backgroung"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="@dimen/weather_cur_size"/>
+
+                <RelativeLayout android:id="@+id/setting_layout_dwbg"
+                    android:layout_width="80dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/setting_tv_dwbg"
+                    android:background="#11111111">
+                    <TextView android:id="@+id/setting_tv_dcwbg_effect"
+                        android:layout_width="60dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:background="#22222222"/>
+
+                    <TextView android:id="@+id/setting_tv_ddwbg_effect"
+                        android:layout_width="60dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#22222222"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/setting_tv_dwbg"
+                    android:layout_toLeftOf="@id/setting_layout_dwbg"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Red"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_dred"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Green"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_dgreen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Blue"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_dblue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Alpha"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_dalpha"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:background="@drawable/setting_item_bg">
+
+                <TextView android:id="@+id/setting_tv_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Application Backgroung"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="@dimen/weather_cur_size"/>
+
+                <RelativeLayout android:id="@+id/setting_layout_awbg"
+                    android:layout_width="80dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/setting_tv_bg"
+                    android:background="#11111111">
+                    <TextView android:id="@+id/setting_tv_acwbg_effect"
+                        android:layout_width="60dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:background="#22222222"/>
+
+                    <TextView android:id="@+id/setting_tv_adwbg_effect"
+                        android:layout_width="60dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#22222222"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@id/setting_tv_bg"
+                    android:layout_toLeftOf="@id/setting_layout_awbg"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Red"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_ared"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Green"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_agreen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:text="Blue"
+                            android:gravity="right"
+                            android:layout_marginRight="5dp"
+                            android:textSize="@dimen/weather_cur_size"
+                            android:layout_gravity="center_vertical"/>
+                        <SeekBar android:id="@+id/setting_seekbar_ablue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:max="255" />
+                    </LinearLayout>
+
+                    <RadioGroup android:id="@+id/setting_rg_appbg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_horizontal"
+                        android:layout_alignParentRight="true">
+                        <RadioButton android:id="@+id/setting_rb_bg_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Color"
+                            android:layout_marginRight="20dp"/>
+
+                        <RadioButton android:id="@+id/setting_rb_bg_photo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Picture"/>
+                    </RadioGroup>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City Management"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:textSize="@dimen/weather_cur_size"/>
+            <ListView android:id="@+id/setting_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:listSelector="@null"
+                android:background="@null"></ListView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.ads.AdView android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adUnitId="a153ce34db73d8a"
+        ads:adSize="BANNER"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:loadAdOnCreate="true"/>
+</RelativeLayout>

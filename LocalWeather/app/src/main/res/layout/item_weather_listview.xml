@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:minHeight="48dp"
+    android:paddingLeft="@dimen/activity_margin"
+    android:paddingRight="@dimen/activity_margin">
+
+    <TextView android:id="@+id/item_weather_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:singleLine="true"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"/>
+
+    <com.rqpw.weather.view.MarQueeTextView android:id="@+id/item_weather_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:gravity="right"
+        android:ellipsize="marquee"
+        android:fadingEdge="none"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:layout_toRightOf="@id/item_weather_date"
+        android:layout_toLeftOf="@+id/item_weather_layout_temp"/>
+
+    <LinearLayout android:id="@+id/item_weather_layout_temp"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
+        <TextView android:id="@+id/item_weather_temp_low"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:gravity="right"
+            android:singleLine="true"
+            android:text="999"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:singleLine="true"
+            android:text="~"/>
+        <TextView android:id="@+id/item_weather_temp_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:singleLine="true"
+            android:gravity="right"
+            android:text="999"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:singleLine="true"
+            android:text="°"/>
+        </LinearLayout>
+
+</RelativeLayout>

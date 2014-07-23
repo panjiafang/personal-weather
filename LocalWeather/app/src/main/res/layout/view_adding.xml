@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText android:id="@+id/view_adding_et"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:hint="City Info"
+        android:textSize="14dp"
+        android:singleLine="true"
+        android:layout_toLeftOf="@+id/view_adding_tv"
+        />
+
+    <TextView android:id="@+id/view_adding_tv"
+        android:layout_width="48dp"
+        android:layout_height="24dp"
+        android:text="Add"
+        android:layout_margin="5dp"
+        android:textColor="@android:color/secondary_text_dark_nodisable"
+        android:gravity="center"
+        android:background="@drawable/actionbar_btn_add"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/weather_layout_app"
+    android:padding="@dimen/activity_margin">
+
+    <RelativeLayout android:id="@+id/weather_layout_current"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/weather_listview"
+        android:background="#11111111"
+        android:padding="@dimen/activity_margin"
+        android:layout_marginBottom="20dp">
+
+        <ImageView android:id="@+id/weather_iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/item_weather_icon"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"/>
+
+        <TextView android:id="@+id/weather_tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="65dp"
+            android:layout_alignParentLeft="true"
+            />
+
+        <TextView android:id="@+id/weather_tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_below="@id/weather_tv_temp"/>
+
+        <TextView android:id="@+id/weather_tv_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_below="@id/weather_tv_desc"/>
+
+        <TextView android:id="@+id/weather_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weather_tv_wind"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
+            <TextView android:id="@+id/weather_tv_area"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                />
+
+            <ProgressBar android:id="@+id/weather_area_progressbar"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/weather_tv_area"
+                android:layout_alignBottom="@id/weather_tv_area"
+                android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+        <ImageView android:id="@+id/weather_iv_sync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginRight="-10dp"
+            android:layout_marginBottom="-10dp"
+            android:src="@android:drawable/stat_notify_sync"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    <ListView android:id="@+id/weather_listview"
+        android:layout_width="match_parent"
+        android:layout_height="242dp"
+        android:dividerHeight="1px"
+        android:layout_alignParentBottom="true"
+        android:cacheColorHint="@null"
+        android:background="#11111111"></ListView>
+
+    <ProgressBar android:id="@+id/weather_progressbar_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:background="@drawable/progressbar_bg"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
